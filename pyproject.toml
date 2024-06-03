@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "googlyeyes"
+version = "0.0.0"
+description = "Googly Eyes API endpoint, Onfido coding challenge submission."
+authors = ["Alexey Shapovalov <alexshapovalov95@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.3"
+dlib = "19.24.4"
+fastapi = "0.111.0"
+python-multipart = "0.0.9"
+numpy = "1.26.4"
+opencv-python = "4.9.0.80"
+pydantic = "2.7.2"
+pydantic-settings = "2.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.2.1"
+jupyterlab = "4.2.1"
+jupyter = "1.0.0"
+matplotlib = "3.9.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

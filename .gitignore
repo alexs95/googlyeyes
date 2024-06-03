@@ -1,0 +1,16 @@
+# IDEs
+.idea
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# MacOS
+.DS_Store
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Python cache
+__pycache__
