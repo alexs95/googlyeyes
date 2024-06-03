@@ -28,11 +28,18 @@ class GooglyEyes:
 
     def googlify(self, eyes: List[Tuple[int, int, int, int]], image: ndarray) -> ndarray:
         for (xi, yi, xj, yj) in eyes:
+            # heuristic to set outline thickness of the googly eye based on image size
             outline_thickness = 1 if image.shape[0] < 500 or image.shape[1] < 500 else 2
             center = (xi + xj) // 2, (yi + yj) // 2
+
+            # heuristic used to generate a slightly random googly eye
+            # it should cover the entire eye and be slightly random by setting
+            # the axes to .2 * largest dimension of the eye
             max_len = max((xj - xi, yj - yi))
             pad = int(max_len * .2)
             axes = randint(max_len, max_len + pad), randint(max_len, max_len + pad)
+
+            # draw eye
             ellipse(image, center, axes, 0., 0., 360, (255, 255, 255), -1)
             ellipse(image, center, axes, 0., 0., 360, (0, 0, 0), outline_thickness)
             circle(image, center, (pad * 3) - 1, (0, 0, 0), -1)

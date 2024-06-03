@@ -27,6 +27,7 @@ Run FastAPI:
 
 ```bash
 fastapi dev --app app
+# Navigate to: http://127.0.0.1:8000/docs
 ``` 
 
 Build Docker container:
@@ -39,10 +40,10 @@ Run Docker container:
 
 ```bash
 docker run --rm -p 18080:80 googlyeyes:0.0.0
+# Navigate to: http://localhost:18080/docs
 ```
 
 ## Project Structure
-
 
 ```bash
 .
@@ -82,7 +83,9 @@ docker run --rm -p 18080:80 googlyeyes:0.0.0
   * I created my own with Google Images.
 * My approach to adding googly eyes was to draw them as a filled ellipse and circle for the pupil.
 * The API was designed to be deployable to Kubernetes.
+  * This would make it quite easy to deploy.
   * It can be scaled horizontally.
+  * I added a Dockerfile and a health route.
 
 ## Improvements
 
@@ -101,4 +104,8 @@ If I had more time, things I would have liked to have done:
     was in that point.
 * Creating a larger and more diverse dataset. My dataset was very small, possibly my choice of approach would have 
   changed if evaluated on a larger and more diverse dataset.
+  * The main motivation for limiting my scope to JPEG images with a max height or width of 1200 pixels was because this
+    was what my dataset consisted of.
+    * To support larger dimensions the dataset could have been copied and re-sized.
+    * Similarly, copied and converted to other formats and then tested.
 
