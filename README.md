@@ -15,6 +15,7 @@ Install dependencies:
 
 ```bash
 poetry install --sync
+poetry shell
 ``` 
 
 Run tests:
